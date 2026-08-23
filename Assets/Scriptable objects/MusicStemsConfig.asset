@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c5b5b1beb7a7324cade13004d06c3f8, type: 3}
+  m_Name: MusicStemsConfig
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.MusicStemsConfig
+  stems:
+  - label: Base
+    clip: {fileID: 8300000, guid: f6f420f0400e2a74897f8bc0626b08f5, type: 3}
+    activationThreshold: 0
+  - label: Add 1
+    clip: {fileID: 8300000, guid: 2c427976ff7ec794c9d8e88fe052e5df, type: 3}
+    activationThreshold: 0
+  - label: Add 2
+    clip: {fileID: 8300000, guid: 6eac4662acf284142a905142f991dcac, type: 3}
+    activationThreshold: 0
+  minVolume: 0.4
+  maxVolume: 1
+  comfortableLowpassCutoff: 22000
+  harshLowpassCutoff: 400
+  comfortableDistortion: 0
+  harshDistortion: 0.35
+  comfortablePitch: 1
+  harshPitch: 0.85
+  smoothing: 3

@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 431468696}
   - component: {fileID: 431468698}
   - component: {fileID: 431468697}
+  - component: {fileID: 431468699}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -202,6 +203,8 @@ MonoBehaviour:
     offset: {x: 0, y: 0, z: 0}
   - sceneName: RoomView2
     offset: {x: 20, y: 0, z: 0}
+  - sceneName: RoomView3
+    offset: {x: 40, y: 0, z: 0}
   cameraNavigator: {fileID: 519420033}
 --- !u!114 &431468698
 MonoBehaviour:
@@ -215,6 +218,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7f819b806919634db318cc435922090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interaction.InteractionCursor2D
+--- !u!114 &431468699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431468695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ce9326fa63a1204c96529ca202585a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.MusicTensionController
+  config: {fileID: 11400000, guid: 6958ece694e7aba46a70e0ffa33d2257, type: 2}
+  musicMixerGroup: {fileID: 24300002, guid: ba657690fe4e41c40adada2310773c5c, type: 2}
+  lowpassCutoffParam: MusicLowpassCutoff
+  distortionParam: MusicDistortion
+  value: 0.5
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
