@@ -4,11 +4,6 @@ using UnityEngine.Rendering.Universal;
 
 namespace Lighting
 {
-    /// <summary>
-    /// Cosmetic finish on top of the scene's diegetic lighting (vignette, bloom, color grading).
-    /// The actual darkness of the scene is driven by SceneLightingRig's Global Light 2D,
-    /// not by this Volume.
-    /// </summary>
     public class PostProcessLightingController : MonoBehaviour
     {
         [SerializeField] private Volume volume;
@@ -42,6 +37,30 @@ namespace Lighting
             if (_bloom)
             {
                 _bloom.intensity.value = intensity;
+            }
+        }
+
+        public void SetSaturation(float saturation)
+        {
+            if (_colorAdjustments)
+            {
+                _colorAdjustments.saturation.value = saturation;
+            }
+        }
+
+        public void SetColorFilter(Color color)
+        {
+            if (_colorAdjustments)
+            {
+                _colorAdjustments.colorFilter.value = color;
+            }
+        }
+
+        public void SetPostExposure(float exposure)
+        {
+            if (_colorAdjustments)
+            {
+                _colorAdjustments.postExposure.value = exposure;
             }
         }
     }

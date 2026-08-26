@@ -14,7 +14,6 @@ namespace Lighting
         public float intensity = 1.5f;
 
         [Header("Follow")]
-        [Tooltip("0 = snap instantly to the mouse, higher = smoother trailing follow.")]
         public float followSmoothTime = 0.05f;
 
         [Header("Depth")]

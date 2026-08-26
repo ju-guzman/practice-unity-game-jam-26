@@ -14,6 +14,7 @@ namespace Inputs
         public event Action Clicked;
         public event Action NextRoomRequested;
         public event Action PreviousRoomRequested;
+        public event Action RestartRequested;
 
         private readonly InputActions _inputActions;
 
@@ -55,6 +56,14 @@ namespace Inputs
             if (context.performed)
             {
                 PreviousRoomRequested?.Invoke();
+            }
+        }
+
+        public void OnRestart(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                RestartRequested?.Invoke();
             }
         }
     }

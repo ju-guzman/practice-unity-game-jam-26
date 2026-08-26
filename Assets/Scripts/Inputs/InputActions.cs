@@ -129,6 +129,15 @@ namespace Inputs
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Restart"",
+                    ""type"": ""Button"",
+                    ""id"": ""8f1a3c5e-7d9f-4b1a-9c3e-5f7a9b1d3e5f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -197,6 +206,17 @@ namespace Inputs
                     ""action"": ""PreviousRoom"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1d3e5f7a-9b1d-4e5f-7a9b-1d3e5f7a9b1d"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Restart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -221,6 +241,7 @@ namespace Inputs
             m_Player_Click = m_Player.FindAction("Click", throwIfNotFound: true);
             m_Player_NextRoom = m_Player.FindAction("NextRoom", throwIfNotFound: true);
             m_Player_PreviousRoom = m_Player.FindAction("PreviousRoom", throwIfNotFound: true);
+            m_Player_Restart = m_Player.FindAction("Restart", throwIfNotFound: true);
         }
 
         ~@InputActions()
@@ -305,6 +326,7 @@ namespace Inputs
         private readonly InputAction m_Player_Click;
         private readonly InputAction m_Player_NextRoom;
         private readonly InputAction m_Player_PreviousRoom;
+        private readonly InputAction m_Player_Restart;
         /// <summary>
         /// Provides access to input actions defined in input action map "Player".
         /// </summary>
@@ -332,6 +354,10 @@ namespace Inputs
             /// Provides access to the underlying input action "Player/PreviousRoom".
             /// </summary>
             public InputAction @PreviousRoom => m_Wrapper.m_Player_PreviousRoom;
+            /// <summary>
+            /// Provides access to the underlying input action "Player/Restart".
+            /// </summary>
+            public InputAction @Restart => m_Wrapper.m_Player_Restart;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -370,6 +396,9 @@ namespace Inputs
                 @PreviousRoom.started += instance.OnPreviousRoom;
                 @PreviousRoom.performed += instance.OnPreviousRoom;
                 @PreviousRoom.canceled += instance.OnPreviousRoom;
+                @Restart.started += instance.OnRestart;
+                @Restart.performed += instance.OnRestart;
+                @Restart.canceled += instance.OnRestart;
             }
 
             /// <summary>
@@ -393,6 +422,9 @@ namespace Inputs
                 @PreviousRoom.started -= instance.OnPreviousRoom;
                 @PreviousRoom.performed -= instance.OnPreviousRoom;
                 @PreviousRoom.canceled -= instance.OnPreviousRoom;
+                @Restart.started -= instance.OnRestart;
+                @Restart.performed -= instance.OnRestart;
+                @Restart.canceled -= instance.OnRestart;
             }
 
             /// <summary>
@@ -474,6 +506,13 @@ namespace Inputs
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnPreviousRoom(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Restart" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnRestart(InputAction.CallbackContext context);
         }
     }
 }

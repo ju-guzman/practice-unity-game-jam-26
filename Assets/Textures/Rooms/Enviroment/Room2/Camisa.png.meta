@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e165d61c9c134804f8bb1eacb8d12c2b
+guid: 3db3daf606f7f4744b672bff7af59887
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2579957754792524931
-    second: orig_0
+      213: 5649833981081900385
+    second: Camisa_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 30
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: orig_0
+      name: Camisa_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 576
-        height: 324
+        x: 21
+        y: 8
+        width: 116
+        height: 760
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d73c31a5716223cd0800000000000000
-      internalID: -2579957754792524931
+      spriteID: 165515a521e386e40800000000000000
+      internalID: 5649833981081900385
       vertices: []
       indices: 
       edges: []
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      orig_0: -2579957754792524931
+      Camisa_0: 5649833981081900385
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

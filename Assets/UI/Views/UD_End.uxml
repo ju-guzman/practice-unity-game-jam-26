@@ -1,0 +1,8 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; position: relative;">
+        <UI.SpriteSheetAnimation sprites="project://database/Assets/Textures/Ending/T_Final1.png?fileID=21300000&amp;guid=cfb47406ec922cd49892555599b1b85b&amp;type=3#T_Final1,project://database/Assets/Textures/Ending/T_Final2.png?fileID=21300000&amp;guid=6083008e7a62d3d48ac1943e4884f02b&amp;type=3#T_Final2,project://database/Assets/Textures/Ending/T_Final3.png?fileID=21300000&amp;guid=8f89ecd1327a0f3418b27930cadc9ece&amp;type=3#T_Final3,project://database/Assets/Textures/Ending/T_Final4.png?fileID=21300000&amp;guid=7b3078a693ae41044a9b73d7e6a22069&amp;type=3#T_Final4,project://database/Assets/Textures/Ending/T_Final5.png?fileID=21300000&amp;guid=dc1c80d89ada33d46bcc83c440f33c1a&amp;type=3#T_Final5,project://database/Assets/Textures/Ending/T_Final6.png?fileID=21300000&amp;guid=de8f13242e607b046af0ac62f8a51a60&amp;type=3#T_Final6" cycle-duration="20" loop="false" playing="false" smooth-transition-duration="0.5" style="flex-grow: 1;"/>
+        <ui:VisualElement name="RestartOverlay" picking-mode="Position" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: flex-end;">
+            <ui:Button name="RestartButton" text="Reiniciar" style="margin-bottom: 50px; font-size: 50px;"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

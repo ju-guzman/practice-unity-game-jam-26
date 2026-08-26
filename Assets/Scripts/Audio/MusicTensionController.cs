@@ -14,6 +14,7 @@ namespace Audio
         [SerializeField] private AudioMixerGroup musicMixerGroup;
         [SerializeField] private string lowpassCutoffParam = "MusicLowpassCutoff";
         [SerializeField] private string distortionParam = "MusicDistortion";
+        [SerializeField] private float startFadeInDuration = 4f;
 
         private static float Value => GameManager.Instance ? GameManager.Instance.Value : 1f;
 
@@ -22,6 +23,9 @@ namespace Audio
         private float _targetLowpassCutoff;
         private float _targetDistortion;
         private float _targetPitch;
+        private bool _forceMuted;
+        private bool _gameStarted;
+        private float _fadeInElapsed;
 
         private void Awake()
         {
@@ -29,8 +33,22 @@ namespace Audio
             CreateStemSources();
         }
 
-        private void Start()
+        private void OnEnable()
         {
+            GameManager.OnGameEnded += HandleGameEnded;
+            GameManager.OnGameStarted += HandleGameStarted;
+        }
+
+        private void HandleGameEnded()
+        {
+            Mute();
+        }
+
+        private void HandleGameStarted()
+        {
+            _gameStarted = true;
+            _fadeInElapsed = 0f;
+
             if (_stemSources.Length == 0)
             {
                 return;
@@ -41,6 +59,12 @@ namespace Audio
             {
                 source.PlayScheduled(startTime);
             }
+        }
+
+        private void OnDisable()
+        {
+            GameManager.OnGameEnded -= HandleGameEnded;
+            GameManager.OnGameStarted -= HandleGameStarted;
         }
 
         private void CreateStemSources()
@@ -66,15 +90,50 @@ namespace Audio
             }
         }
 
+        private void Mute()
+        {
+            _forceMuted = true;
+        }
+
         private void Update()
         {
-            if (!config || _stemSources.Length == 0)
+            if (!config || _stemSources.Length == 0 || !_gameStarted)
             {
                 return;
             }
 
-            UpdateTargets();
+            if (_forceMuted)
+            {
+                for (var i = 0; i < _stemTargetVolumes.Length; i++)
+                {
+                    _stemTargetVolumes[i] = .5f;
+                }
+            }
+            else
+            {
+                UpdateTargets();
+                ApplyStartFadeIn();
+            }
+
             ApplySmoothing();
+        }
+
+        private void ApplyStartFadeIn()
+        {
+            if (_fadeInElapsed >= startFadeInDuration)
+            {
+                return;
+            }
+
+            _fadeInElapsed += Time.deltaTime;
+            var fadeInMultiplier = startFadeInDuration <= 0f
+                ? 1f
+                : Mathf.Clamp01(_fadeInElapsed / startFadeInDuration);
+
+            for (var i = 0; i < _stemTargetVolumes.Length; i++)
+            {
+                _stemTargetVolumes[i] *= fadeInMultiplier;
+            }
         }
 
         private void UpdateTargets()

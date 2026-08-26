@@ -14,13 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Audio.MusicStemsConfig
   stems:
   - label: Base
-    clip: {fileID: 8300000, guid: f6f420f0400e2a74897f8bc0626b08f5, type: 3}
+    clip: {fileID: 8300000, guid: be22d03e9459b814cb692dc338cd37b1, type: 3}
     activationThreshold: 0
-  - label: Add 1
-    clip: {fileID: 8300000, guid: 2c427976ff7ec794c9d8e88fe052e5df, type: 3}
+  - label: Groove
+    clip: {fileID: 8300000, guid: 75c74ccf27e0a1548b41223f00f5859f, type: 3}
     activationThreshold: 0
-  - label: Add 2
-    clip: {fileID: 8300000, guid: 6eac4662acf284142a905142f991dcac, type: 3}
+  - label: Armonia
+    clip: {fileID: 8300000, guid: 5d982538d7d4792439492d737f605dc6, type: 3}
+    activationThreshold: 0
+  - label: Ritmo
+    clip: {fileID: 8300000, guid: c812b47ae19a2c84ba2d90d82d236e2d, type: 3}
+    activationThreshold: 0
+  - label: Ritmo
+    clip: {fileID: 8300000, guid: c812b47ae19a2c84ba2d90d82d236e2d, type: 3}
     activationThreshold: 0
   minVolume: 0.4
   maxVolume: 1
@@ -30,4 +36,4 @@ MonoBehaviour:
   harshDistortion: 0.35
   comfortablePitch: 1
   harshPitch: 0.85
-  smoothing: 3
+  smoothing: 1
